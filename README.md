@@ -19,3 +19,5 @@ incluir código que permita simular errores de la red, tanto en el emisor como e
 - sudo apt install git
 - sudo apt install mysql-server
 - sudo mysql_secure_installation
+
+# Collecter. java
