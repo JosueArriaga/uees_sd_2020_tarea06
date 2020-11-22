@@ -386,7 +386,7 @@ public class Collecter
 
             Random rand = new Random();
             while (true)
-            { ClienteSocket.setSoTimeout(1000);
+            { ClienteSocket.setSoTimeout(1);
                 
                 //generate sensor and send it
                 //Generar el sensor y enviarlo
