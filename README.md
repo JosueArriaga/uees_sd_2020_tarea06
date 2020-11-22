@@ -23,6 +23,7 @@ incluir código que permita simular errores de la red, tanto en el emisor como e
 # Server.java
 Este aplicativo contiene la conexión en el puerto UDP 9999, ademas posee la respectiva conexion a mysql donde fue creada la base de datos con el nombre uees, misma que contiene nombres con las distintas columnas del deber. Se recibe los respectivos datos en cada conexion con el agente colector, los datos validos de los sensores los almacenará en la base de datos, este aplicativo crea un archivo de texto con el nombre "log.txt" donde se almacena cada registro con su respectivo de mensaje de resultado. Ademas, previene la escritura de datos repetidos.
 #### Ejecucion del aplicativo
+- Se procede ir a la ruta donde se encuentra los archivos del deber
 - java -cp mysql.jar Se ejecuta la respectiva libreria de mysql
 - server.java  Se ejecuta la clase clase java del agente servidor
 # Collecter.java
