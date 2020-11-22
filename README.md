@@ -25,6 +25,6 @@ Este aplicativo contiene la conexión en el puerto UDP 9999, ademas posee la res
 #### Ejecucion del aplicativo
 - Se procede ir a la ruta donde se encuentra los archivos del deber
 - Se abre la terminal de linux
-- java -cp mysql.jar Se ejecuta la respectiva libreria de mysql
-- server.java  Se ejecuta la clase clase java del agente servidor
+- En la terminal se procede a poner el comando java -cp mysql.jar Se ejecuta la respectiva libreria de mysql
+- Procedentemente del comando server.java  este mismo ejecutará la clase clase java del agente servidor
 # Collecter.java
