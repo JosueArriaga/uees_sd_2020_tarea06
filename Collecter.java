@@ -19,7 +19,7 @@ public class Collecter
         try {
 
             while (true) {
-                InetAddress host = InetAddress.getByName("localhost");
+                InetAddress host = InetAddress.getByName("10.0.2.15");
                 int port=9999;
 
                 System.out.println("por favor, seleccione una opcion");
