@@ -7,3 +7,8 @@ se deberá implementar las medidas necesarias para manejar efectivamente cualqui
 incluir código que permita simular errores de la red, tanto en el emisor como en el receptor.
 
 # Requerimientos 
+# Agente colector
+- sudo apt-get update
+- sudo apt install net-tools
+- sudo apt install default-jdk
+- sudo apt install git
