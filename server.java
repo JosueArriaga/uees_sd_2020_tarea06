@@ -102,7 +102,7 @@ public class server
                             Statement stmt = conexion.createStatement();
                             ResultSet rs = stmt.executeQuery("SELECT * FROM sensor WHERE sensorID = '" + sensor.trim() + "' AND tiempoS = '" + timeservidor.trim() + "' AND tiempoC= '" + time.trim() + "' AND (lectura LIKE " + lectura + " OR lectura=" + lectura + "  )");
 
-                            //si el duplicado es excitado
+                            //si el duplicado existe
                             if (rs.next()) {
                                 System.out.println("duplicado");
 
@@ -119,7 +119,7 @@ public class server
                                 fr.write(sensor.trim() + " / " + lectura + " / " + time.trim() + " / " + timeservidor.trim() + " / " + send + "\n");
                                 fr.close();
 
-                                //si el duplicado no excita
+                                //si el duplicado no existe
                             } else if (!rs.next()) {
                                 Statement stmt1 = conexion.createStatement();
                                 stmt1.executeUpdate("insert into sensor values('" + sensor.trim() + "'," + lectura + ",'" + time.trim() + "','" + timeservidor.trim() + "')");
