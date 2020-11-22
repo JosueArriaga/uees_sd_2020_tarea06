@@ -5,4 +5,4 @@ las mediciones y las almacenará en una base de datos. La comunicación entre lo
 se deberá implementar las medidas necesarias para manejar efectivamente cualquier tipo de error de red. Además, las aplicaciones deberán 
 incluir código que permita simular errores de la red, tanto en el emisor como en el receptor.
 
-## Requerimientos
+# Requerimientos #
