@@ -31,4 +31,5 @@ Este aplicativo contiene la conexión en el puerto UDP 9999, ademas posee la res
 Este aplicativo contiene las respectivas funcionalidades que complementan los escenarios, Se crean sensores con un ID al selecionar cada uno de los escenarios, en cada iteracion el colector tomara el timestamp(la fecha y hora del servidor en ese momento) y por cada sensor generará aleatoriamente un valor que será utilizado como la medición; Este mismo enviara cada lectura al servidor mendiante un mensaje UDP, tendra la respectiva validaciones para los errores o mensajes duplicados. El colector realizara iteraciones indefinidas hasta que estas sean canceladas por el operador.
 ### Ejecucion del aplicativo 
 - Se procede a clonar el repositorio con el comando "git clone"[url_del_repositorio]"
+- Se dirige a la carpeta con el comando "cd [nombre_del_repositorio]"
 - Se ejecuta la siguiente linea de codigo para ejecutar la clase del colector: java  Collecter.java 
