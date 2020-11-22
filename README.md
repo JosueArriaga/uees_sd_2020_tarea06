@@ -33,3 +33,6 @@ Este aplicativo contiene las respectivas funcionalidades que complementan los es
 - Se procede a clonar el repositorio con el comando "git clone"[url_del_repositorio]"
 - Se dirige a la carpeta con el comando "cd [nombre_del_repositorio]"
 - Se ejecuta la siguiente linea de codigo para ejecutar la clase del colector: java  Collecter.java 
+# Referencias
+https://www.binarytides.com/udp-socket-programming-in-java/
+https://www.edureka.co/blog/connect-mysql-database-in-java
