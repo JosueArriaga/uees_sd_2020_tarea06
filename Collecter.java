@@ -19,16 +19,16 @@ public class Collecter
         try {
 
             while (true) {
-                InetAddress host = InetAddress.getByName("10.0.2.15");
+                InetAddress host = InetAddress.getByName("192.168.100.74");
                 int port=9999;
 
                 System.out.println("por favor, seleccione una opcion");
-                System.out.println("1. senario 1  ");
-                System.out.println("2. senario 2  ");
-                System.out.println("3. senario 3  ");
-                System.out.println("4. senario 4  ");
-                System.out.println("5. senario 5  ");
-                System.out.println("6. senario 6  ");
+                System.out.println("1. escenario 1  ");
+                System.out.println("2. escenario 2  ");
+                System.out.println("3. escenario 3  ");
+                System.out.println("4. escenario 4  ");
+                System.out.println("5. escenario 5  ");
+                System.out.println("6. escenario 6  ");
                 System.out.println("7. normal");
                 System.out.println("8. exit");
 
@@ -38,28 +38,28 @@ public class Collecter
 		boolean quit =false;
                 switch (selection) {
                     case 1:
-                       senatio1(host,port);
+                       escenario1(host,port);
                        break;
 
                     case 2:
 
-                        senatio2(host,port);
+                        escenario2(host,port);
                         break;
                     case 3:
 
-                        senario3(host,port);
+                        escenario3(host,port);
                         break;
                     case 4:
-                        senario4(host,port);
+                        escenario4(host,port);
                         break;
                     case 5:
-                        senario5(host,port);
+                        escenario5(host,port);
                         break;
                     case 6:
-                        senario6(host,port);
+                        escenario6(host,port);
                         break;
                     case 7:
-                        send(host,port);
+                        normal(host,port);
                         break;
                     case 8:
 			quit=true;
@@ -87,7 +87,7 @@ public class Collecter
 
     //simple function to echo data to terminal
 
-    private static void send(InetAddress host,int port) throws IOException, InterruptedException {
+    private static void normal(InetAddress host,int port) throws IOException, InterruptedException {
 
 
         try{
@@ -168,7 +168,7 @@ public class Collecter
 
 
     }
-    private static void senatio1(InetAddress host,int port)  {
+    private static void escenario1(InetAddress host,int port)  {
 
 
 
@@ -266,7 +266,7 @@ public class Collecter
 
 
     }
-    private static void senatio2(InetAddress host,int port) throws IOException, InterruptedException {
+    private static void escenario2(InetAddress host,int port) throws IOException, InterruptedException {
 
         try {
 
@@ -370,7 +370,7 @@ public class Collecter
         }
 
     }
-    private static void senario3(InetAddress host,int port)  {
+    private static void escenario3(InetAddress host,int port)  {
 
 
 
@@ -468,7 +468,7 @@ public class Collecter
             e.printStackTrace();
         }
     }
-    private static void senario4(InetAddress host,int port) throws IOException, InterruptedException {
+    private static void escenario4(InetAddress host,int port) throws IOException, InterruptedException {
 
 
         try{
@@ -556,7 +556,7 @@ public class Collecter
 
 
     }
-    private static void senario5(InetAddress host,int port) throws IOException, InterruptedException {
+    private static void escenario5(InetAddress host,int port) throws IOException, InterruptedException {
 
 
         try{
@@ -650,7 +650,7 @@ public class Collecter
 
 
     }
-    private static void senario6(InetAddress host,int port) throws IOException, InterruptedException {
+    private static void escenario6(InetAddress host,int port) throws IOException, InterruptedException {
 
 
         try{
