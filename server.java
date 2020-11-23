@@ -30,7 +30,7 @@ public class server
 
 
             col(con,sock);
-            //communication loop
+            //bucle de comunicacion
 
         }
 
