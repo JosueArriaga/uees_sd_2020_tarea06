@@ -1,6 +1,4 @@
-/**
- Java ECHO client with UDP sockets example
- */
+
 
 import java.io.*;
 import java.net.*;
@@ -85,20 +83,20 @@ public class Collecter
 
     }
 
-    //simple function to echo data to terminal
+    
 
     private static void normal(InetAddress host,int port) throws IOException, InterruptedException {
 
 
         try{
-            //declare client socket
+            
             //declarar el enchufe del cliente
             DatagramSocket ClienteSocket = new DatagramSocket();
             ClienteSocket.setSoTimeout(10000);
             Random rand = new Random();
             while (true)
             {
-                //generate sensor and send it
+                
                 //Generar el sensor y enviarlo
                 byte[] enviarsensor = new byte[1024];
 
@@ -107,8 +105,8 @@ public class Collecter
                 DatagramPacket sensorDP = new DatagramPacket(enviarsensor, enviarsensor.length, host, port);
                 ClienteSocket.send(sensorDP);
 
-                // Generar valand enviarlo
-                //generate  value and send it
+                
+                // Generar valor y enviarlo
                 byte[] enviandolectura = new byte[1024];
                 float lecuraF= (float) (rand.nextInt(10)+ rand.nextDouble());
                 //convete it from float to string
@@ -117,8 +115,8 @@ public class Collecter
                 enviandolectura = lecura.getBytes();
                 DatagramPacket lecuraDP = new DatagramPacket(enviandolectura, enviandolectura.length, host, port);
                 ClienteSocket.send(lecuraDP);
-                //getting time of the collector
-                //obtener el tiempo de la collector
+                
+                //obtener el tiempo del colector
                 byte[] enviartiempoC = new byte[1024];
                 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
                 LocalDateTime now = LocalDateTime.now();
@@ -126,14 +124,14 @@ public class Collecter
                 enviartiempoC = time.getBytes();
                 DatagramPacket timeDP = new DatagramPacket(enviartiempoC, enviartiempoC.length, host, port);
                 ClienteSocket.send(timeDP);
-                //getting response from the server
+                
                 //obteniendo respuesta del servidor
                 byte[] Responde = new byte[1024];
                 DatagramPacket confirm = new DatagramPacket(Responde, Responde.length);
                 ClienteSocket.receive(confirm);
                 String s = new String(confirm.getData());
                 System.out.println(s.trim());
-                //check if there is lost data or duplicate
+                
                 //comprobar si hay datos perdidos o duplicados
                 if (s.trim().equals("perdido") || s.trim().equals("duplicado"))
                 {
@@ -175,13 +173,13 @@ public class Collecter
 
 
         try {
-            //declare client socket
+            
             //declarar el enchufe del cliente
             DatagramSocket ClienteSocket = new DatagramSocket();
 
             Random rand = new Random();
             while (true) {
-                //generate sensor and send it
+                
                 //Generar el sensor y enviarlo
                 byte[] enviarsensor = new byte[1024];
 
@@ -190,18 +188,18 @@ public class Collecter
                 DatagramPacket sensorDP = new DatagramPacket(enviarsensor, enviarsensor.length, host, port);
                 ClienteSocket.send(sensorDP);
 
-                // Generar valand enviarlo
-                //generate  value and send it
+                
+                // Generar valor y enviarlo
                 byte[] enviandolectura = new byte[1024];
                 float lecuraF = 10;
-                //convete it from float to string
-                //lo transmiten de la float a la string
+                
+                //de float a string
                 String lecura = String.valueOf(lecuraF);
                 enviandolectura = lecura.getBytes();
                 DatagramPacket lecuraDP = new DatagramPacket(enviandolectura, enviandolectura.length, host, port);
                 ClienteSocket.send(lecuraDP);
-                //getting time of the collector
-                //obtener el tiempo de la collector
+                
+                //obtener el tiempo del colector
                 byte[] enviartiempoC = new byte[1024];
                 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
                 LocalDateTime now = LocalDateTime.now();
@@ -209,14 +207,14 @@ public class Collecter
                 enviartiempoC = time.getBytes();
                 DatagramPacket timeDP = new DatagramPacket(enviartiempoC, enviartiempoC.length, host, port);
                 ClienteSocket.send(timeDP);
-                //getting response from the server
+               
                 //obteniendo respuesta del servidor
                 byte[] Responde = new byte[1024];
                 DatagramPacket confirm = new DatagramPacket(Responde, Responde.length);
                 ClienteSocket.receive(confirm);
                 String s = new String(confirm.getData());
                 System.out.println(s.trim());
-                //check if there is lost data or duplicate
+                
                 //comprobar si hay datos perdidos o duplicados
 
 
@@ -271,7 +269,7 @@ public class Collecter
         try {
 
 
-            //declare client socket
+            
             //declarar el enchufe del cliente
             DatagramSocket ClienteSocket = new DatagramSocket();
 
@@ -286,7 +284,7 @@ public class Collecter
                     System.out.println("Su pedido puede estar esperando en alguna cola para ser entregado mas tarde.");
                     check = true;
                 }
-                //generate sensor and send it
+                
                 //Generar el sensor y enviarlo
                 byte[] enviarsensor = new byte[1024];
 
@@ -295,18 +293,18 @@ public class Collecter
                 DatagramPacket sensorDP = new DatagramPacket(enviarsensor, enviarsensor.length, host, port);
                 ClienteSocket.send(sensorDP);
 
-                // Generar valand enviarlo
-                //generate  value and send it
+                
+                // Generar valor y enviarlo
                 byte[] enviandolectura = new byte[1024];
                 float lecuraF = (float) (rand.nextInt(10) + rand.nextDouble());
-                //convete it from float to string
-                //lo transmiten de la float a la string
+               
+                //de float a string
                 String lecura = String.valueOf(lecuraF);
                 enviandolectura = lecura.getBytes();
                 DatagramPacket lecuraDP = new DatagramPacket(enviandolectura, enviandolectura.length, host, port);
                 ClienteSocket.send(lecuraDP);
-                //getting time of the collector
-                //obtener el tiempo de la collector
+                
+                //obtener el tiempo del colector
                 byte[] enviartiempoC = new byte[1024];
                 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
                 LocalDateTime now = LocalDateTime.now();
@@ -314,14 +312,14 @@ public class Collecter
                 enviartiempoC = time.getBytes();
                 DatagramPacket timeDP = new DatagramPacket(enviartiempoC, enviartiempoC.length, host, port);
                 ClienteSocket.send(timeDP);
-                //getting response from the server
+                
                 //obteniendo respuesta del servidor
                 byte[] Responde = new byte[1024];
                 DatagramPacket confirm = new DatagramPacket(Responde, Responde.length);
                 ClienteSocket.receive(confirm);
                 String s = new String(confirm.getData());
                 System.out.println(s.trim());
-                //check if there is lost data or duplicate
+                
                 //comprobar si hay datos perdidos o duplicados
 
 
@@ -379,7 +377,7 @@ public class Collecter
 
 
         try {
-            //declare client socket
+            
             //declarar el enchufe del cliente
             DatagramSocket ClienteSocket = new DatagramSocket();
 
@@ -388,7 +386,7 @@ public class Collecter
             while (true)
             { ClienteSocket.setSoTimeout(1);
                 
-                //generate sensor and send it
+                
                 //Generar el sensor y enviarlo
                 byte[] enviarsensor = new byte[1024];
 
@@ -399,18 +397,18 @@ public class Collecter
                 TimeUnit.SECONDS.sleep(3);
                 ClienteSocket.send(sensorDP);
 
-                // Generar valand enviarlo
-                //generate  value and send it
+                
+                // Generar valor y enviarlo
                 byte[] enviandolectura = new byte[1024];
                 float lecuraF= (float) (rand.nextInt(10)+ rand.nextDouble());
-                //convete it from float to string
-                //lo transmiten de la float a la string
+               
+                //de float a string
                 String  lecura = String.valueOf(lecuraF);
                 enviandolectura = lecura.getBytes();
                 DatagramPacket lecuraDP = new DatagramPacket(enviandolectura, enviandolectura.length, host, port);
                 ClienteSocket.send(lecuraDP);
-                //getting time of the collector
-                //obtener el tiempo de la collector
+                
+                //obtener el tiempo del colector
                 byte[] enviartiempoC = new byte[1024];
                 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
                 LocalDateTime now = LocalDateTime.now();
@@ -418,14 +416,14 @@ public class Collecter
                 enviartiempoC = time.getBytes();
                 DatagramPacket timeDP = new DatagramPacket(enviartiempoC, enviartiempoC.length, host, port);
                 ClienteSocket.send(timeDP);
-                //getting response from the server
+                
                 //obteniendo respuesta del servidor
                 byte[] Responde = new byte[1024];
                 DatagramPacket confirm = new DatagramPacket(Responde, Responde.length);
                 ClienteSocket.receive(confirm);
                 String s = new String(confirm.getData());
                 System.out.println(s.trim());
-                //check if there is lost data or duplicate
+                
                 //comprobar si hay datos perdidos o duplicados
                 if (s.trim().equals("perdido") || s.trim().equals("duplicado"))
                 {
@@ -472,7 +470,7 @@ public class Collecter
 
 
         try{
-            //declare client socket
+            
             //declarar el enchufe del cliente
             DatagramSocket ClienteSocket = new DatagramSocket();
 
@@ -489,7 +487,7 @@ public class Collecter
                     check = true;
                 }
                 TimeUnit.SECONDS.sleep(4);
-                //generate sensor and send it
+                
                 //Generar el sensor y enviarlo
                 byte[] enviarsensor = new byte[1024];
 
@@ -498,18 +496,18 @@ public class Collecter
                 DatagramPacket sensorDP = new DatagramPacket(enviarsensor, enviarsensor.length, host, port);
                 ClienteSocket.send(sensorDP);
 
-                // Generar valand enviarlo
-                //generate  value and send it
+                
+                // Generar valor y enviarlo
                 byte[] enviandolectura = new byte[1024];
                 float lecuraF= (float) (rand.nextInt(10)+ rand.nextDouble());
-                //convete it from float to string
-                //lo transmiten de la float a la string
+                
+                //de float string
                 String  lecura = String.valueOf(lecuraF);
                 enviandolectura = lecura.getBytes();
                 DatagramPacket lecuraDP = new DatagramPacket(enviandolectura, enviandolectura.length, host, port);
                 ClienteSocket.send(lecuraDP);
-                //getting time of the collector
-                //obtener el tiempo de la collector
+                
+                //obtener el tiempo del colector
                 byte[] enviartiempoC = new byte[1024];
                 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
                 LocalDateTime now = LocalDateTime.now();
@@ -517,14 +515,14 @@ public class Collecter
                 enviartiempoC = time.getBytes();
                 DatagramPacket timeDP = new DatagramPacket(enviartiempoC, enviartiempoC.length, host, port);
                 ClienteSocket.send(timeDP);
-                //getting response from the server
+                
                 //obteniendo respuesta del servidor
                 byte[] Responde = new byte[1024];
                 DatagramPacket confirm = new DatagramPacket(Responde, Responde.length);
                 ClienteSocket.receive(confirm);
                 String s = new String(confirm.getData());
                 System.out.println(s.trim());
-                //check if there is lost data or duplicate
+                
                 //comprobar si hay datos perdidos o duplicados
                 if (s.trim().equals("perdido") || s.trim().equals("duplicado"))
                 {
@@ -561,7 +559,7 @@ public class Collecter
 
         try{
 
-            //declare client socket
+            
             //declarar el enchufe del cliente
             DatagramSocket ClienteSocket = new DatagramSocket();
             ClienteSocket.setSoTimeout(10000);
@@ -569,7 +567,7 @@ public class Collecter
             while (true)
             {
 
-                //generate sensor and send it
+                
                 //Generar el sensor y enviarlo
                 byte[] enviarsensor = new byte[1024];
 
@@ -578,18 +576,18 @@ public class Collecter
                 DatagramPacket sensorDP = new DatagramPacket(enviarsensor, enviarsensor.length, host, port);
                 ClienteSocket.send(sensorDP);
 
-                // Generar valand enviarlo
-                //generate  value and send it
+                
+                // Generar valor y enviarlo
                 byte[] enviandolectura = new byte[1024];
                 float lecuraF= 10;
-                //convete it from float to string
+                
                 //lo transmiten de la float a la string
                 String  lecura = String.valueOf(lecuraF);
                 enviandolectura = lecura.getBytes();
                 DatagramPacket lecuraDP = new DatagramPacket(enviandolectura, enviandolectura.length, host, port);
                 ClienteSocket.send(lecuraDP);
-                //getting time of the collector
-                //obtener el tiempo de la collector
+                
+                //obtener el tiempo del colector
                 byte[] enviartiempoC = new byte[1024];
                 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
                 LocalDateTime now = LocalDateTime.now();
@@ -597,7 +595,7 @@ public class Collecter
                 enviartiempoC = time.getBytes();
                 DatagramPacket timeDP = new DatagramPacket(enviartiempoC, enviartiempoC.length, host, port);
                 ClienteSocket.send(timeDP);
-                //getting response from the server
+                r
                 //obteniendo respuesta del servidor
                 byte[] Responde = new byte[1024];
                 DatagramPacket confirm = new DatagramPacket(Responde, Responde.length);
@@ -614,7 +612,7 @@ public class Collecter
 
                 }
                 TimeUnit.SECONDS.sleep(4);
-                //check if there is lost data or duplicate
+                
                 //comprobar si hay datos perdidos o duplicados
                 if (s.trim().equals("perdido") || s.trim().equals("duplicado"))
                 {
@@ -655,7 +653,7 @@ public class Collecter
 
         try{
 
-            //declare client socket
+            
             //declarar el enchufe del cliente
             DatagramSocket ClienteSocket = new DatagramSocket();
             ClienteSocket.setSoTimeout(10000);
@@ -663,7 +661,7 @@ public class Collecter
             while (true)
             {
                 boolean check=false;
-                //generate sensor and send it
+                
                 //Generar el sensor y enviarlo
                 byte[] enviarsensor = new byte[1024];
 
@@ -672,18 +670,18 @@ public class Collecter
                 DatagramPacket sensorDP = new DatagramPacket(enviarsensor, enviarsensor.length, host, port);
                 ClienteSocket.send(sensorDP);
 
-                // Generar valand enviarlo
-                //generate  value and send it
+                
+                // Generar valor y enviarlo
                 byte[] enviandolectura = new byte[1024];
                 float lecuraF= (float) (rand.nextInt(10)+ rand.nextDouble());
-                //convete it from float to string
-                //lo transmiten de la float a la string
+                
+                //de float a string
                 String  lecura = String.valueOf(lecuraF);
                 enviandolectura = lecura.getBytes();
                 DatagramPacket lecuraDP = new DatagramPacket(enviandolectura, enviandolectura.length, host, port);
                 ClienteSocket.send(lecuraDP);
-                //getting time of the collector
-                //obtener el tiempo de la collector
+                
+                //obtener el tiempo del colector
                 byte[] enviartiempoC = new byte[1024];
                 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
                 LocalDateTime now = LocalDateTime.now();
@@ -691,7 +689,7 @@ public class Collecter
                 enviartiempoC = time.getBytes();
                 DatagramPacket timeDP = new DatagramPacket(enviartiempoC, enviartiempoC.length, host, port);
                 ClienteSocket.send(timeDP);
-                //getting response from the server
+                
                 //obteniendo respuesta del servidor
                 byte[] Responde = new byte[1024];
                 DatagramPacket confirm = new DatagramPacket(Responde, Responde.length);
@@ -710,7 +708,7 @@ public class Collecter
 
                 TimeUnit.SECONDS.sleep(3);
 
-                //check if there is lost data or duplicate
+                
                 //comprobar si hay datos perdidos o duplicados
                 if (s.trim().equals("perdido") || s.trim().equals("duplicado"))
                 {
