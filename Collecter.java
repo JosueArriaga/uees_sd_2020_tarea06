@@ -109,8 +109,8 @@ public class Collecter
                 // Generar valor y enviarlo
                 byte[] enviandolectura = new byte[1024];
                 float lecuraF= (float) (rand.nextInt(10)+ rand.nextDouble());
-                //convete it from float to string
-                //lo transmiten de la float a la string
+                //de float to string
+             
                 String  lecura = String.valueOf(lecuraF);
                 enviandolectura = lecura.getBytes();
                 DatagramPacket lecuraDP = new DatagramPacket(enviandolectura, enviandolectura.length, host, port);
@@ -193,7 +193,7 @@ public class Collecter
                 byte[] enviandolectura = new byte[1024];
                 float lecuraF = 10;
                 
-                //de float a string
+                //tranformacion float a string
                 String lecura = String.valueOf(lecuraF);
                 enviandolectura = lecura.getBytes();
                 DatagramPacket lecuraDP = new DatagramPacket(enviandolectura, enviandolectura.length, host, port);
@@ -270,7 +270,7 @@ public class Collecter
 
 
             
-            //declarar el enchufe del cliente
+            //declarar socket de cliente
             DatagramSocket ClienteSocket = new DatagramSocket();
 
             Random rand = new Random();
@@ -378,7 +378,7 @@ public class Collecter
 
         try {
             
-            //declarar el enchufe del cliente
+            //declarar socket de cliente
             DatagramSocket ClienteSocket = new DatagramSocket();
 
 
@@ -471,7 +471,7 @@ public class Collecter
 
         try{
             
-            //declarar el enchufe del cliente
+            //declarar socket de cliente
             DatagramSocket ClienteSocket = new DatagramSocket();
 
             Random rand = new Random();
@@ -560,7 +560,7 @@ public class Collecter
         try{
 
             
-            //declarar el enchufe del cliente
+            //declarar socket de cliente
             DatagramSocket ClienteSocket = new DatagramSocket();
             ClienteSocket.setSoTimeout(10000);
             Random rand = new Random();
@@ -654,7 +654,7 @@ public class Collecter
         try{
 
             
-            //declarar el enchufe del cliente
+            //declarar socket de cliente
             DatagramSocket ClienteSocket = new DatagramSocket();
             ClienteSocket.setSoTimeout(10000);
             Random rand = new Random();
