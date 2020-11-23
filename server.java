@@ -1,6 +1,4 @@
-/**
- Java ECHO server with UDP sockets example
- */
+
 
 import java.io.*;
 import java.net.*;
@@ -18,12 +16,12 @@ public class server
         {
 
 
-            //1. creating a server socket, parameter is local port number
+            //creando un socket de servidor
             DatagramSocket  sock = new DatagramSocket(9999);
 
 
 
-            //2. Wait for an incoming data
+            //Datos entrantes
             System.out.println("Esperando los datos entrantes");
 
 
@@ -43,7 +41,7 @@ public class server
         }
     }
 
-    //simple function to echo data to terminal
+    
 
     public static void col(Connection conexion, DatagramSocket servidorSocket) throws  InterruptedException {
 
